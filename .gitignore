@@ -6,4 +6,4 @@ __pycache__/
 .DS_Store
 # 外部に公開しない設定ファイル
 secrets.json
-memo/
+shell_scripts/*
