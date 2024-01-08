@@ -1,0 +1,53 @@
+{
+    "comment": "FastAPIの設定ファイル",
+    "environment": {
+        "comment": "本番環境は'production'、開発環境は'development'",
+        "value": "development"
+    },
+    "server": {
+        "comment": "サーバーの設定",
+        "production": {
+            "host": "0.0.0.0",
+            "port": 8080,
+            "reload": false,
+            "logLevel": "info"
+        },
+        "development": {
+            "host": "0.0.0.0",
+            "port": 5050,
+            "reload": true,
+            "logLevel": "debug"
+        }
+    },
+    "database": {
+        "comment": "データベース（DynamoDB）の設定",
+        "production": {
+            "tableName": {
+                "user": "EmoMeter-User"
+            },
+            "region": "ap-northeast-1"
+        },
+        "development": {
+            "tableName": {
+                "user": "EmoMeter-User-dev"
+            },
+            "region": "ap-northeast-1"
+        }
+    },
+    "limit": {
+        "comment": "リクエストの制限",
+        "maxContentLength": 10485760
+    },
+    "learnedModel": {
+        "comment": "学習済みモデルの設定",
+        "semanticSearch": "paraphrase-multilingual-mpnet-base-v2"
+    },
+    "similarity": {
+        "comment": "文章とキーワードの類似度を判定する際の設定",
+        "maxWordCount": 15000
+    },
+    "similarKeyword": {
+        "comment": "各文章に対して類似度が最も高いキーワードを決定する際の設定",
+        "minimumSimilarity": 0.3000
+    }
+}
