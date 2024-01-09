@@ -7,3 +7,6 @@ __pycache__/
 # 外部に公開しない設定ファイル
 secrets.json
 shell_scripts/*
+# 学習済みモデル（ファイルサイズが大きいため）
+learned_models/*
+!learned_models/memo.txt

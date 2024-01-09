@@ -1,0 +1,2 @@
+この階層に学習済みモデルの入ったディレクトリを配置する。
+（例）sentence-transformers_paraphrase-multilingual-mpnet-base-v2/

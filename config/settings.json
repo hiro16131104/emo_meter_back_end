@@ -40,7 +40,8 @@
     },
     "learnedModel": {
         "comment": "学習済みモデルの設定",
-        "semanticSearch": "paraphrase-multilingual-mpnet-base-v2"
+        "semanticSearch": "./learned_models/sentence-transformers_paraphrase-multilingual-mpnet-base-v2",
+        "semanticSearchSpare": "paraphrase-multilingual-mpnet-base-v2"
     },
     "similarity": {
         "comment": "文章とキーワードの類似度を判定する際の設定",

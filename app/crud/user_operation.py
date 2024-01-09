@@ -33,9 +33,10 @@ class UserOperation:
     # レコード件数を取得する
     @classmethod
     def read_user_count(cls) -> int:
-        # ユーザーテーブルのレコード件数を取得する
-        user_count: int = UserModel.count()
-        return user_count
+        # 全てのレコードを取得する
+        users: list[UserModel] = list(UserModel.scan())
+        # ユーザーテーブルのレコード件数を返却する
+        return len(users)
 
     # レコードを更新する
     @classmethod

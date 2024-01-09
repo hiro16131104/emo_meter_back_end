@@ -69,6 +69,13 @@ def calculate_similarity(request: SimilarityRequest) -> SimilarityResponse:
 
     # クラス変数に文章と学習済みモデルを格納する
     SemanticSearch.set_sentences(sentences)
+
+    print("+++test+++")
+    import glob
+    files = glob.glob("./*")
+    for file in files:
+        print(file)
+
     SemanticSearch.set_learned_model(Config.model_name)
 
     for keyword in keywords:
