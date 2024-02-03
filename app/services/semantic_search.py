@@ -17,9 +17,13 @@ class SemanticSearch:
         self.similarities: list[float] = []
 
         if not self.sentences:
-            raise ValueError("クラス変数'sentences'が空です。先にset_sentences()を実行してください。")
+            raise ValueError(
+                "クラス変数'sentences'が空です。先にset_sentences()を実行してください。"
+            )
         elif not self.learned_model:
-            raise ValueError("クラス変数'learned_model'が空です。先にset_learned_model()を実行してください。")
+            raise ValueError(
+                "クラス変数'learned_model'が空です。先にset_learned_model()を実行してください。"
+            )
 
     # クラス変数'sentences'に文章を格納する
     @classmethod
@@ -29,8 +33,9 @@ class SemanticSearch:
     # クラス変数'learned_model'に学習済みモデルを格納する
     @classmethod
     def set_learned_model(cls, model_name: str) -> None:
-        # 学習済みモデルを読み込む
-        cls.learned_model = SentenceTransformer(model_name)
+        # 学習済みモデルが未定義の場合のみ、学習済みモデルを読み込む
+        if not cls.learned_model:
+            cls.learned_model = SentenceTransformer(model_name)
 
     # 文章とキーワードの類似度を計算する
     def calculate_similarity(self) -> None:
